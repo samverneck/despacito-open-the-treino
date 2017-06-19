@@ -7,9 +7,14 @@
     <label for="senha">Senha</label>
     <input type="password" id="senha" class="form-control">
   </div>
+  <button class="btn waves-effect waves-light"  
+    type="submit" name="action" (click)="fazerLogin()">
+    LOGIN
+    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+  </button>
 </form>
 
-<!-- <form (submit)="$event.preventDefault()">
+ <!--<form (submit)="$event.preventDefault()">
   <div class="form-group">
     <label for="email">EMAIL:</label>
     <input [(ngModel)]="usuario.email" type="email" id="email" class="form-control">
