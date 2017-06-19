@@ -1,11 +1,11 @@
-<form (submit)="$event.preventDefault()">
+<form (submit)="login(fazerLogin)">
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" id="email" class="form-control">
+    <input [(ngModel)]="usuario.email" type="email" id="email" name="email" class="form-control">
   </div>
   <div class="form-group">
     <label for="senha">Senha</label>
-    <input type="password" id="senha" class="form-control">
+    <input [(ngModel)]="usuario.senha" type="password" id="senha" name="senha" class="form-control">
   </div>
   <button class="btn waves-effect waves-light"  
     type="submit" name="action" (click)="fazerLogin()">

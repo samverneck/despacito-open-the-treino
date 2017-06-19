@@ -1,3 +1,5 @@
+import { Usuario } from './usuario';
+import { AuthService } from './auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -15,14 +17,21 @@ import { Component, OnInit } from '@angular/core';
 // }
 export class LoginComponent implements OnInit {
 
-  // private usuario: Usuario = new Usuario();
+  private usuario: Usuario = new Usuario();
 
-  // constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
   fazerLogin() {
-    console.log(this.fazerLogin());
+    this.authService.login(this.usuario.email, this.usuario.senha)
+      .then(() => {
+        alert('logado com sucesso!')
+      })
+      .catch(() => {
+        alert('usuário ou senha inválidos!')
+      })
   }
+
 }
